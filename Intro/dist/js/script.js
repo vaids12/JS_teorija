@@ -141,3 +141,49 @@ if (b<10) {
     console.log("b yra lygus 10");
 }
 
+//Žinomas skaičius n. Parašykite programą, kuri nustatytų ar skaičius yra blogas ar geras? Neigiamas – „Blogas“, teigiamas „Geras“. Pasitikrinkite: Kai n = 20, turėtume gauti: Skaičius geras.
+
+let n = 0;
+
+if(n<0){
+    console.log("Blogas");
+} else if (n===0) {
+    console.log("Geras");
+} else {
+    console.log("skaicius yra 0");
+}
+
+
+//Mokinys eina gatve ir prieina sankryžą reguliuojamą šviesoforu. Sudarykite programą, kuri nustatytu, kaip turi pasielgti mokinys? Žinome šviesoforo spalvos kodą n, 1-žalia, 2-geltona, 3-raudona. Pasitikrinkite: Kai n= 2, turėtume gauti: Palaukite.
+
+// 1 - Eiti +
+// 2 - Palaukite +
+// 3 - Stop
+let light;
+
+light = 8;
+
+if(light===1){
+    console.log("Eiti");
+} else if (light===2) {
+    console.log("Palaukite");
+} else if (light===3) {
+    console.log("Stop");
+} else {
+    console.log("Toks pasirinkimas neegzistuoja");
+}
+
+//Loterijos bilietą sudaro šešiaženklis numeris. Loterijoje laimi tas bilietas, kurio numeris dalosi iš 4. Nustatykite, ar loterijos bilietas n yra laimingas?
+
+
+let ticket = 123456;
+
+let remainder = ticket%4;
+
+console.log(remainder);
+
+if((ticket%4)===0){
+    console.log("Bilietas laimingas");
+} else {
+    console.log("Bilietas nelaimingas");
+}
