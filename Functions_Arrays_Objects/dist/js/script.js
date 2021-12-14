@@ -253,7 +253,100 @@ furniture.unshift("spintele");
 
 console.log(furniture.length); //paskutinis indeksas yra 1 mazesnis uz length
 
-delete furniture[2];
+delete furniture[2]; // nenaudojame trynimui
 console.log(furniture);
 
+furniture.splice(2, 0, "lentyna", "lova");
+console.log(furniture);
+furniture.splice(4, 1); // pagrindinis trynimui
+console.log(furniture);
+
+//masyvu sujungimas
+
+const smallCities = [
+    "Kedainiai",
+    "Marijampole",
+    "Alytus",
+    "Anyksciai"
+];
+
+const bigCities = [
+    "Vilnius",
+    "Kaunas",
+    "Klaipeda",
+    "Siauliai",
+    "Panevezys"
+];
+
+const cities = bigCities.concat(smallCities);// po kablelio galima isvardinti daug masyvu
+
+console.log(cities);
+
+const cities2 = cities.concat("Silute");
+console.log(cities2);
+
+const bigThree = cities.slice(0, 3);
+console.log(bigThree);
+
+const smallThree = [];
+smallThree.splice(0, 0, cities.slice(2,3).toString(), cities.slice(5,6).toString(), cities.slice(8,9).toString());
+
+console.log(smallThree);
+
+cities.sort();
+
+console.log(cities);
+
+cities.reverse();
+
+console.log(cities);
+
+const numbers = [1, 5689665, 562, 7896];
+numbers.sort();
+console.log(numbers);
+
+// numbers sort
+numbers.sort(function(a,b){
+    return a - b; //jei mazejimo tvarka, tai b - a
+});
+//
+console.log(numbers);
+
+const numbers2 = [12, 56, 89, 1, 54, 999, 478];
+
+let maxNo = parseInt(numbers2.sort(function(a,b){
+    return a-b;
+}).slice(numbers2.length-1).toString());
+
+console.log(maxNo);
+
+function minArray (array) {
+    return Math.min.apply(null, array);
+}
+
+let minNo = minArray(numbers2);
+console.log (minNo);
+
+function addOne(value, index, array){
+    text += value + "<br>";
+}
+let text = "";
+console.log(text);
+numbers2.forEach(addOne);
+document.write(text);
+
+function increased(value, index, array) {
+    return value + 1;
+}
+
+const numbers3 = numbers2.map(increased);
+console.log(numbers3);
+
+
+function doubleDigits(value, index,  array){
+    return value < 100;
+}
+
+const underHundrend = numbers2.filter(doubleDigits);
+console.log(underHundrend);
 
